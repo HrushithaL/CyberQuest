@@ -1,0 +1,16 @@
+# Ignore environment files
+backend/.env
+ai-engine/api/.env
+.env
+
+# Node modules and typical build artifacts
+node_modules/
+build/
+coverage/
+.DS_Store
+
+# Local env files for frontend
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local

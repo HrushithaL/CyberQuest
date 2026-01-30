@@ -1,0 +1,238 @@
+/* Theme variables moved to src/styles/theme.css */
+
+/* ===== NAVBAR FULL ===== */
+.navbar-full {
+  width: 100%;
+  background: rgba(10, 14, 39, 0.95);
+  border-bottom: 2px solid rgba(0, 255, 136, 0.1);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  padding: 0.8rem 0;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-inner {
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ===== BRAND ===== */
+.brand-text {
+  font-size: 1.8rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.brand-text:hover {
+  transform: scale(1.05);
+}
+
+/* ===== NAV LINKS SECTION ===== */
+.nav-section {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.nav-item-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  position: relative;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.nav-item-link:hover {
+  color: var(--primary);
+}
+
+.nav-item-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 2px;
+  background: var(--primary);
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+.nav-item-link:hover::after {
+  width: 100%;
+}
+
+/* ===== LOGOUT BUTTON ===== */
+.logout-btn {
+  background: transparent;
+  border: 2px solid var(--primary);
+  padding: 6px 15px;
+  color: var(--primary);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.logout-btn:hover {
+  background: var(--primary);
+  color: var(--darker);
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+  transform: translateY(-2px);
+}
+
+/* ===== NAVBAR USER SECTION ===== */
+.navbar-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: 20px;
+  padding-left: 20px;
+  border-left: 1px solid rgba(0, 255, 136, 0.2);
+}
+
+.user-name {
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--darker);
+  font-weight: bold;
+  font-size: 0.85rem;
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+}
+
+/* ===== MOBILE HAMBURGER ===== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: var(--primary);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* ===== RESPONSIVE STYLES ===== */
+@media (max-width: 768px) {
+  .navbar-inner {
+    padding: 0 20px;
+  }
+
+  .nav-section {
+    gap: 1rem;
+    flex-direction: column;
+    position: fixed;
+    top: 70px;
+    left: -300px;
+    width: 300px;
+    background: rgba(10, 14, 39, 0.98);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 0 15px 15px 0;
+    transition: left 0.3s ease;
+    border-right: 2px solid rgba(0, 255, 136, 0.2);
+    height: calc(100vh - 70px);
+    overflow-y: auto;
+    z-index: 998;
+  }
+
+  .nav-section.active {
+    left: 0;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .brand-text {
+    font-size: 1.5rem;
+  }
+
+  .navbar-user {
+    margin-left: 0;
+    padding-left: 0;
+    border-left: none;
+    flex-direction: column;
+    padding: 15px 0;
+    border-top: 1px solid rgba(0, 255, 136, 0.2);
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .logout-item {
+    width: 100%;
+  }
+
+  .logout-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-item-link {
+    padding: 10px 0;
+    display: block;
+  }
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.navbar-full {
+  animation: slideDown 0.5s ease;
+}

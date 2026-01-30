@@ -1,0 +1,15 @@
+.roadmap-level{background:rgba(255,255,255,0.03);padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04)}
+.level-header{display:flex;gap:12px;align-items:center;margin-bottom:10px}
+.level-index{background:linear-gradient(135deg,#00ff88,#00d4ff);color:#000;padding:4px 8px;border-radius:6px;font-weight:700}
+.level-title{font-weight:700;color:#fff}
+.level-items{display:flex;flex-wrap:wrap;gap:10px}
+.roadmap-item{background:rgba(0,0,0,0.35);padding:8px 12px;border-radius:8px;cursor:pointer;min-width:200px;display:flex;justify-content:space-between;align-items:center}
+.roadmap-item.disabled{opacity:0.45;cursor:not-allowed}
+.roadmap-item.completed{border:1px solid rgba(0,255,136,0.45);box-shadow:0 0 8px rgba(0,255,136,0.08)}
+.badge{font-size:0.75rem;padding:4px 8px;border-radius:6px}
+.badge.done{background:rgba(0,255,136,0.12);color:#00ff88}
+.badge.play{background:rgba(0,212,255,0.12);color:#00d4ff}
+.badge.lesson{background:rgba(255,255,255,0.06);color:#fff}
+
+/* Make roadmap item names white for better contrast */
+.item-name{color:#ffffff}
